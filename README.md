@@ -52,6 +52,6 @@ Google Safe Browsing API: Verifica se o domínio está em listas de malware/phis
 
 Se desejar testar a extensão "ao vivo" (e não apenas a demo), pode clonar o repositório completo e instalá-la localmente.
 
-Link do Repositório: [LINK PARA SEU GITHUB AQUI]
+Link do Repositório: https://vigia-vosa-project.netlify.app/
 
 Aviso de API: A API pública (no meu servidor EC2) tem um limite de 100 pesquisas/dia e pode estar offline ou no limite. Para testes reais, é recomendado que siga as instruções no repositório para configurar o seu próprio servidor app.py com as suas próprias chaves de API do Google.
