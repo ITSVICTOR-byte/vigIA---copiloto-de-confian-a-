@@ -1,0 +1,400 @@
+/* --- Reset Básico e Fontes --- */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #f8fafc; /* bg-gray-50 */
+    color: #1f2337; /* text-gray-800 */
+}
+
+/* --- Layout do Container --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem; /* px-6 */
+}
+
+/* --- Fundos --- */
+.bg-white { background-color: #ffffff; }
+.bg-light { background-color: #f8fafc; } /* bg-gray-50 / 100 */
+.bg-dark { background-color: #1f2937; color: #f9fafb; } /* bg-gray-800 */
+
+/* --- Links e Botões --- */
+.btn {
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem; /* rounded-lg */
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s ease-out;
+    display: inline-block;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+.btn:hover {
+    transform: translateY(-3px); /* "Pop" para cima */
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+.btn-lg {
+    padding: 0.8rem 2rem;
+    font-size: 1.125rem; /* text-lg */
+}
+.btn-primary {
+    background-color: #b45309; /* Cor do Logo */
+    color: #ffffff;
+}
+.btn-primary:hover {
+    background-color: #92400e; 
+}
+.btn-secondary {
+    background-color: #e5e7eb; /* bg-gray-200 */
+    color: #374151; /* text-gray-700 */
+    border: 1px solid #d1d5db;
+}
+.btn-secondary:hover {
+    background-color: #d1d5db; 
+}
+
+/* --- Header --- */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.logo {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit; 
+}
+.logo-img {
+    height: 32px; /* 2rem */
+    width: auto;
+}
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+.nav-links .btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* --- Seções --- */
+section {
+    padding: 5rem 0; /* py-20 */
+}
+h2 {
+    font-size: 2.25rem; /* text-3xl */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem; /* mb-12 */
+}
+.section-subtitle {
+    text-align: center;
+    max-width: 42rem; /* max-w-2xl */
+    margin-left: auto;
+    margin-right: auto;
+    color: #4b5563; /* text-gray-600 */
+    margin-bottom: 3rem;
+}
+
+/* !! NOVO ESTILO: Logo no meio do texto !! */
+.inline-logo {
+    height: 1.2em; /* Um pouco maior que o texto */
+    width: auto;
+    vertical-align: middle; /* Alinha com o texto */
+    margin-bottom: 0.2em; /* Ajuste fino de alinhamento */
+}
+
+/* --- Hero Section --- */
+#hero {
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+#hero h1 {
+    font-size: 3.75rem; /* text-5xl */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+#hero p {
+    font-size: 1.25rem; /* text-xl */
+    color: #4b5563; /* text-gray-600 */
+    max-width: 48rem; /* max-w-3xl */
+    margin: 0 auto 2.5rem auto;
+}
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* --- Grid e Cards --- */
+.grid {
+    display: grid;
+    gap: 2.5rem;
+}
+.grid-cols-2 {
+    max-width: 56rem; /* max-w-4xl */
+    margin: 0 auto;
+}
+.grid-cols-3 {
+    max-width: 72rem; /* max-w-6xl */
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+    background-color: #f8fafc; 
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+#architecture .card {
+    background-color: #f8fafc;
+}
+#architecture .card h3 {
+    font-size: 1.5rem; /* text-2xl */
+}
+.card h3 {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.card p, .card li {
+    color: #4b5563; /* text-gray-600 */
+}
+.card ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+}
+.card .sub-list {
+    list-style-type: '– ';
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+
+/* --- Demo Section --- */
+.demo-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.btn-demo {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background-color: #e5e7eb; /* bg-gray-200 */
+    color: #374151; /* text-gray-700 */
+    transition: all 0.2s ease-out;
+}
+.btn-demo:hover {
+    background-color: #d1d5db; /* bg-gray-300 */
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+.btn-demo.active {
+    background-color: #b45309; /* Cor do Logo */
+    color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+}
+
+#demo-browser {
+    max-width: 56rem; /* max-w-4xl */
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    overflow: hidden;
+    position: relative; 
+}
+.browser-bar {
+    height: 2.5rem;
+    background-color: #e5e7eb; /* bg-gray-200 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    position: relative; 
+}
+.browser-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+.browser-dot {
+    width: 0.75rem; /* w-3 */
+    height: 0.75rem; /* h-3 */
+    border-radius: 9999px; /* rounded-full */
+}
+.url-bar {
+    flex: 1;
+    margin: 0 1rem;
+    background-color: #ffffff;
+    border-radius: 9999px;
+    height: 1.75rem;
+    padding: 0 1rem;
+    font-size: 0.875rem; /* text-sm */
+    color: #374151; /* text-gray-700 */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.vigia-icon-btn {
+    padding: 0.25rem;
+    border-radius: 9999px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s ease-out;
+    /* Adicionado para centralizar a imagem */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vigia-icon-btn:hover {
+    background-color: #d1d5db; /* hover:bg-gray-300 */
+    transform: scale(1.1); /* "Pop" no ícone */
+}
+
+/* !! MUDANÇA: .vigia-icon (SVG) foi removido e trocado por .vigia-icon-img (IMG) !! */
+.vigia-icon-img {
+    height: 22px; /* 1.375rem */
+    width: auto;
+}
+
+#fake-content {
+    padding: 1.5rem;
+    background-color: #f8fafc; /* bg-gray-50 */
+    height: 24rem; /* h-96 */
+    background-color: #ffffff;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af; /* text-gray-400 */
+}
+#fake-content-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* --- CTA Section --- */
+#github-link {
+    text-align: center;
+}
+#github-link h2 {
+    color: #ffffff;
+}
+#github-link p {
+    font-size: 1.25rem;
+    color: #d1d5db; /* text-gray-300 */
+    max-width: 42rem;
+    margin: 0 auto 2.5rem auto;
+}
+#github-link .btn-secondary {
+    background-color: #ffffff;
+    color: #1f2937; /* text-gray-900 */
+}
+#github-link .btn-secondary:hover {
+    background-color: #e5e7eb; /* bg-gray-200 */
+}
+.github-hint {
+    color: #6b7280; /* text-gray-400 */
+    margin-top: 1rem;
+    font-size: 0.875rem; /* text-sm */
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+    color: #6b7280; /* text-gray-500 */
+}
+
+/* --- Estilos do Popup do VigIA (Copiados) --- */
+
+.vigia-popup {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    width: 280px;
+    background-color: #f5f5f7;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 110%; 
+    right: 1rem; 
+    z-index: 100;
+    display: none; 
+    overflow: hidden;
+}
+.vigia-popup-body { padding: 15px; }
+.vigia-popup h3 {
+    font-size: 18px; font-weight: 600; color: #1d1d1f; margin-top: 0;
+    margin-bottom: 15px; text-align: center; border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+#status-indicator {
+    display: flex; align-items: center; justify-content: center;
+    padding: 12px; margin-bottom: 20px; border-radius: 8px;
+    font-weight: 600; font-size: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.status-seguro { background-color: #e6ffed; border: 1px solid #5cb85c; color: #3d8b3d; }
+.status-alerta { background-color: #fffbe6; border: 1px solid #f0ad4e; color: #8a6d3b; }
+.status-perigo { background-color: #fce4e4; border: 1px solid #d32f2f; color: #b71c1c; }
+.info-card {
+    display: none; background-color: #fff; border-radius: 8px;
+    padding: 15px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.info-card strong {
+    display: block; font-size: 16px; font-weight: 600; color: #1d1d1f;
+    margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;
+}
+.info-card p, .info-card li { font-size: 13px; line-height: 1.5; color: #4a4a4a; margin: 5px 0; }
+
+#verificacao-link {
+    display: block; 
+    margin-top: 10px; 
+    padding: 8px 10px; 
+    background-color: #f0f8ff;
+    border: 1px solid #a8d9ff; 
+    border-radius: 6px; 
+    text-align: center;
+    font-size: 14px; 
+    font-weight: 500; 
+    color: #007bff; 
+    text-decoration: none;
+    transition: background-color 0.2s;
+    
+    overflow-wrap: break-word; 
+    word-wrap: break-word;     
+    word-break: break-all;     
+}
+#verificacao-link:hover {
+    background-color: #e6f3ff;
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VigIA - Seu Copiloto de Confiança </title>
+    <!-- CSS Tradicional -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <!-- Logo (O seu código já está correto) -->
+            <a href="#" class="logo">
+                <img src="vigia_logo.png" alt="VigIA Logo" class="logo-img">
+                <span>VigIA</span>
+            </a>
+            <div class="nav-links">
+                <a href="#demo" class="btn btn-primary">Testar a Demo</a>
+                <a href="#github-link" id="https://github.com/ITSVICTOR-byte/vigIA---copiloto-de-confian-a-/tree/main" class="btn btn-secondary">Ver o Código</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main id="hero" class="container">
+        <h1>VigIA: Seu Copiloto de Confiança<img src="vigia_logo.png" alt="ícone" class="inline-logo"></h1>
+        <p>
+            Uma extensão de navegador de prova de conceito, desenhada para atuar como um "copiloto" de confiança. O VigIA combate ativamente a desinformação e golpes de phishing enquanto você navega.
+        </p>
+        <div class="cta-buttons">
+            <a href="#demo" class="btn btn-primary btn-lg">
+                Testar a Demo Interativa
+            </a>
+            <a href="https://github.com/ITSVICTOR-byte/vigIA---copiloto-de-confian-a-/tree/main" id="https://github.com/ITSVICTOR-byte/vigIA---copiloto-de-confian-a-/tree/main" class="btn btn-secondary btn-lg">
+                Ver o Código no GitHub
+            </a>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section id="features" class="bg-white">
+        <div class="container">
+            <h2>Como Funciona?</h2>
+            <div class="grid grid-cols-2">
+                <!-- Feature 1: Modo Passivo -->
+                <div class="card">
+                    <h3>1. Modo Passivo (Sites de Notícias)</h3>
+                    <p>
+                        Ao navegar em artigos, o VigIA analisa a reputação da fonte no banco de dados, o título (procurando sensacionalismo) e cruza a informação com motores de busca de checagem (o "Detetive") e de contexto (o "Drone"), apresentando um relatório de confiança.
+                    </p>
+                </div>
+                <!-- Feature 2: Modo Ativo -->
+                <div class="card">
+                    <h3>2. Modo Ativo (YouTube)</h3>
+                    <p>
+                        A extensão injeta um botão "Verificar com o VigIA" diretamente na interface do YouTube. Com um clique, o usuário pode solicitar uma verificação sob demanda do título e descrição do vídeo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="bg-light">
+        <div class="container">
+            <h2> Demo Interativa</h2>
+            <p class="section-subtitle">
+                <!-- !! MUDANÇA AQUI: O emoji (🛡️) foi trocado pela imagem da logo !! -->
+                Clique nos separadores abaixo para simular a visita a diferentes sites e clique no ícone do VigIA (<img src="vigia_logo.png" alt="ícone" class="inline-logo">) na barra do "navegador" para ver como a extensão reage.
+                <br><strong>Esta demo não faz chamadas de API reais e não gasta o limite.</strong>
+            </p>
+
+            <!-- Navegação da Demo -->
+            <div class="demo-nav">
+                <button onclick="changeScenario('safe')" id="btn-safe" class="btn-demo active">Cenário 1: Seguro</button>
+                <button onclick="changeScenario('context')" id="btn-context" class="btn-demo">Cenário 2: Contexto</button>
+                <button onclick="changeScenario('phishing')" id="btn-phishing" class="btn-demo">Cenário 3: Phishing</button>
+            </div>
+
+            <!-- O "Simulador de Browser" -->
+            <div id="demo-browser">
+                <!-- Barra do "Browser" -->
+                <div class="browser-bar">
+                    <div class="browser-controls">
+                        <div class="browser-dot" style="background-color: #f87171;"></div>
+                        <div class="browser-dot" style="background-color: #fbbf24;"></div>
+                        <div class="browser-dot" style="background-color: #34d399;"></div>
+                    </div>
+                    <!-- Barra de Endereço Falsa -->
+                    <div class="url-bar">
+                        <span id="fake-url">https://exame.com/pop/qual-e-a-ordem-cronologica...</span>
+                    </div>
+                    <!-- Ícone Falso do VigIA -->
+                    <!-- !! MUDANÇA AQUI: O <svg> foi trocado pela imagem da logo !! -->
+                    <button onclick="togglePopup()" title="Testar o VigIA" class="vigia-icon-btn">
+                        <img src="vigia_logo.png" alt="Testar o VigIA" class="vigia-icon-img">
+                    </button>
+
+                    <!-- Popup do VigIA (Posição já corrigida) -->
+                    <div id="vigia-popup" class="vigia-popup">
+                        <div class="vigia-popup-body">
+                            <h3>VigIA Check</h3>
+                            <div id="status-indicator">
+                                <span id="main-message"></span>
+                            </div>
+                            <div id="verificacao-card" class="info-card">
+                                <strong><span id="verificacao-titulo"></span></strong>
+                                <p><span id="verificacao-fonte-texto"></span></p>
+                                <a id="verificacao-link" href="#" target="_blank"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fim do Popup -->
+                </div>
+                
+                <!-- Conteúdo Falso (Placeholder) -->
+                <div id="fake-content">
+                    <span id="fake-content-text">Artigo: 'Qual é a ordem cronológica da franquia 'Predador'?'</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="bg-white">
+        <div class="container">
+            <h2><img src="vigia_logo.png" alt="ícone" class="inline-logo"> Arquitetura do Projeto</h2>
+            <div class="grid grid-cols-3">
+                <!-- 1. Frontend -->
+                <div class="card">
+                    <h3>1. A Extensão (Frontend)</h3>
+                    <ul>
+                        <li>Construída com `JavaScript`, `HTML` e `CSS`.</li>
+                        <li>`popup.js`: Controla a interface do popup.</li>
+                        <li>`background.js`: Ouve os eventos e comunica com o backend.</li>
+                        <li>`agente_youtube.js`: O *content script* injetado no YouTube.</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Backend -->
+                <div class="card">
+                    <h3>2. O Cérebro (Backend)</h3>
+                    <ul>
+                        <li>Servidor `Python (Flask)` em uma instância **AWS EC2**.</li>
+                        <li>`app.py`: Endpoint da API (`/check-url`).</li>
+                        <li>`vigia.db`: Base de dados `SQLite` para reputação.</li>
+                    </ul>
+                </div>
+                
+                <!-- 3. APIs Externas -->
+                <div class="card">
+                    <h3>3. Os "Detetives" (APIs)</h3>
+                    <ul>
+                        <li>**Google Programmable Search (x2):**
+                            <ul class="sub-list">
+                                <li>`CSE_ID_CHECAGEM` ("Detetive")</li>
+                                <li>`CSE_ID_NOTICIAS` ("Drone")</li>
+                            </ul>
+                        </li>
+                        <li>**Google Safe Browsing API:** Verifica malware/phishing.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA / Download Section -->
+    <section id="github-link" class="bg-dark">
+        <div class="container">
+            <h2>Veja o Projeto Completo</h2>
+            <p>
+                A API pública tem um limite de 100 pesquisas/dia. Para testar "ao vivo" ou ver o código-fonte do servidor e da extensão, visite o repositório no GitHub.
+            </p>
+            <a href="https://github.com/ITSVICTOR-byte/vigIA---copiloto-de-confian-a-/tree/main" target="_blank" class="btn btn-secondary btn-lg">
+                Ver o Código no GitHub
+            </a>
+            <p class="https://github.com/ITSVICTOR-byte/vigIA---copiloto-de-confian-a-/tree/main">
+                
+            </p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Victor Oliveira - Projeto VIgIA.</p>
+        </div>
+    </footer>
+
+    <!-- Script da Demo -->
+    <script src="script.js" defer></script>
+</body>
+</html>
