@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "VigIA - Seu Copiloto de Confiança",
+  "version": "1.1", 
+  "description": "Verifica ativamente sites e vídeos em busca de desinformação.",
+  
+  "icons": {
+    "16": "icones/vigia_logo.png",
+    "32": "icones/vigia_logo.png",
+    "48": "icones/vigia_logo.png",
+    "128": "icones/vigia_logo.png"
+  },
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+  
+  "permissions": [
+    "activeTab",  
+    "tabs",        
+    "storage"
+  ],
+  
+  "host_permissions": [
+    "http://ec2-54-205-5-10.compute-1.amazonaws.com:8080/*"
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["agente_youtube.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
